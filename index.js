@@ -20,7 +20,13 @@ mongoose
     return Recipe.deleteMany()
   })
   .then(() => {
-    // Run your code here, after you have insured that the connection was made
+    Recipe.create({
+      title: 'Spaghetti',
+      level: 'Easy Peasy',
+      cuisine: 'Italian'
+    }).then(() => {
+      console.log("done")
+    })
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
